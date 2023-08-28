@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# add .local/bin to PATH
+[ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
+
+# export xdg directories
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# keep your home clean
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
+export XAUTHORITY="$XDG_CONFIG_HOME/x11/Xauthority"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export WGETRC="XDG_CONFIG_HOME/wget/wgetrc"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/gitconfig"
+
+# misc
+export VIMRUNTIME="/usr/share/nvim/runtime"
+
+# default programs
+export EDITOR="nvim"
+export BROWSER="firefox"
+export TERMINAL="st"
