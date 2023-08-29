@@ -1,8 +1,13 @@
+#!/bin/zsh
+# source other scripts
+source "$XDG_CONFIG_HOME/shell/aliasrc"
+
 # prompt
 autoload -U colors && colors
-PS="%B%F{green}%n %F{yellow}%3~%F{white}%b %# "
+PS1="%B%F{green}%n %F{yellow}%3~%F{white}%b %# "
 
 # general settings
+#
 # history
 HISTFILE=~/.cache/zsh/history
 HISTSIZE=1000
