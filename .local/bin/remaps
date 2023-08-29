@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# configure autorepeat for faster typing
+xset r rate 300 50
+# remap caps lock to escape
+setxkbmap -option caps:super
+killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
+xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
+# set EURkey keyboard layout
+setxkbmap eu
