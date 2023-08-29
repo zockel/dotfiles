@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# simple xinit startup script
+
+remaps & 	# run keyboard remapping script
+status &        # run statusbar script
+sxhkd &         # run hotkey daemon
+exec dwm 	# run dwm
