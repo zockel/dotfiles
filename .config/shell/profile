@@ -17,6 +17,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export WGETRC="XDG_CONFIG_HOME/wget/wgetrc"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/gitconfig"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # misc
 export VIMRUNTIME="/usr/share/nvim/runtime"
