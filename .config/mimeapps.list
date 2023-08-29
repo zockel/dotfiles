@@ -1,0 +1,16 @@
+[Default Applications]
+
+# xdg-open will use these to determine how to handle different filetypes
+
+text/x-shellscript=text.desktop;
+x-scheme-handler/mailto=mail.desktop;
+text/plain=text.desktop
+application/postscript=pdf.desktop
+application/pdf=pdf.desktop
+image/png=img.desktop
+image/jpeg=img.desktop
+image/gif=img.desktop
+inode/directory=file.desktop
+audio/aac=audio.desktop
+audio/mp3=audio.desktop
+audio/flac=audio.desktop
