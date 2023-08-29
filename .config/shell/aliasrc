@@ -1,0 +1,21 @@
+# aliasrc
+
+# abbreviations
+alias \
+	p="sudo pacman" \
+	v="$EDITOR" \
+	z="zathura" \
+	ka="killall" \
+	mount="sudo mount" \
+	umount="sudo umount" \
+	ls="ls -lhN --color=auto --group-directories=first" \
+	ll="ls -lhNa --color=auto --group-directories=first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	mkdir="mkdir -pv"
+
+# make cp, rm and mv foolproof
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI"
