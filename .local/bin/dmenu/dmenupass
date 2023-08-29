@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+
+arg="$1"
+if [[ $arg == "--copy" ]]; then
+	prompt="Copy:"
+	copy=1
+elif [[ $arg == "--print" ]]; then
+	prompt="Print:";
+	print=1
+else
+	prompt="Autotype:"
+	autotype=1
+fi
+
+shopt -s nullglob globstar
+
+username_delim='user'
+password_delim='pass'
+
+username_field_delim='user:'
+password_field_delim='pass:'
+sequence_field_delim='dpseq:'
+url_field_delim='url:'
+
+default_sequence='user :tab pass :enter'
+
+
+__init__() {
+	prefix=${PASSWORD_STORE_DIR:-~/.password-store}
+	password_itemlist=( "$prefix"/**/*.gpg )
+	password_itemlist=( "${password_itemlist[@]#"$prefix"/}" )
+	password_itemlist=( "${password_itemlist[@]%.gpg}" )
+	password_item=$(printf '%s\n' "${password_itemlist[@]}" | dmenu -l 20 -p "$prompt" "$@")
+	[[ -n $password_item ]] || exit
+	[ ! -z "$copy" ] && { __copy__ 2>/dev/null; exit; }
+	[ ! -z "$print" ] && { __print__ 2>/dev/null; exit; }
+	password_itemfile="$prefix/${password_item}.gpg"
+
+	while IFS= read -r line
+	do
+		key=$(awk '{print $1;}' <<< "$line")
+		value=${line##$key }
+		case "$key" in
+		"${username_field_delim}")
+			username="$value"
+			;;
+		"${password_field_delim}")
+			password="$value"
+			;;
+		"${sequence_field_delim}")
+			sequence="$value"
+			;;
+		"${url_field_delim}")
+			url="$value"
+			;;
+		*);;
+		esac
+	done < <(pass "$password_item" || kill -HUP $$; )
+}
+
+__run__() {
+	for token in ${sequence:-${default_sequence}}
+	do
+		case "$token" in
+		"${username_delim}")
+			xdotool type --clearmodifiers "$username"
+			;;
+		"${password_delim}")
+			xdotool type --clearmodifiers "$password"
+			;;
+		':wait')
+			sleep 0.2
+			;;
+		':pause')
+			sleep 1
+			;;
+		':input')
+			xdotool key semicolon key t
+			sleep 0.1
+			xdotool key a
+			;;
+		':tab')
+			xdotool key Tab
+			;;
+		':enter')
+			xdotool key KP_Enter
+			;;
+		*);;
+		esac
+	done
+
+	unset -v username
+	unset -v password
+	unset -v sequence
+	unset -v url
+}
+
+__copy__() {
+	pass -c "$password_item"
+	# password=$(pass $password_item | grep pass | awk '{print $2}')
+	# printf "$password" | xsel -b
+	# unset -v password
+}
+
+__print__() {
+	password=$(pass $password_item | grep pass | awk '{print $2}')
+	echo -n "$password"
+	unset -v password
+}
+
+__init__ 2>/dev/null
+__run__ 2>/dev/null
