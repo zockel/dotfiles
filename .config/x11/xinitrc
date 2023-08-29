@@ -5,4 +5,5 @@
 remaps & 	# run keyboard remapping script
 status &        # run statusbar script
 sxhkd &         # run hotkey daemon
+mpd &           # run music player daemon
 exec dwm 	# run dwm
