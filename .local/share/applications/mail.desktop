@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Mail User Agent
+Exec=/usr/local/bin/st -e mutt %u
