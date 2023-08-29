@@ -1,0 +1,43 @@
+# scripts and other commands
+super + c
+        maim -f png $HOME/bilder/screenshots/$(date +%y%m%d-%H%m-%S).png
+super + BackSpace
+        sysact
+super + shift + i
+        dmenupass --copy
+
+# Run programs
+super + w
+        $BROWSER
+super + v
+        $TERMINAL $EDITOR
+super + e
+        $TERMINAL $MAILCLIENT
+super + shift + e
+        dmenuunicode
+
+# mpc and pulseaudio
+super + p
+        mpc toggle
+super + comma
+        mpc seek -10
+super + period
+        mpc seek +10
+super + shift + comma
+        mpc prev
+super + shift + period
+        mpc next
+super + shift +  m
+        pamixer --toggle-mute
+super + equal
+        pamixer -i 5
+super + shift + equal
+        pamixer -i 10
+super + minus
+        pamixer -d 5
+super + shift + minus
+        pamixer -d 10
+
+# F keys
+super + F7
+        mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)
