@@ -1,0 +1,6 @@
+account markus@hanetzok.net
+tls on
+host mail.hanetzok.net
+user markus
+passwordeval pass email/markus@hanetzok.net
+delivery maildir /home/markus/mail/inbox
