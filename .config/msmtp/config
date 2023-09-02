@@ -1,0 +1,11 @@
+account markus@hanetzok.net
+host mail.hanetzok.net
+port 465
+from markus@hanetzok.net
+user markus
+passwordeval "pass email/markus@hanetzok.net"
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/markus/.cache/msmtp/msmtp.log
+tls_starttls off
