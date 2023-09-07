@@ -17,7 +17,7 @@ set record = "+sent"
 
 macro index o "<shell-escape>mpop markus@hanetzok.net<enter>" "sync markus@hanetzok.net"
 
-mailboxes "=inbox" "=drafts" "=trash" "=sent" "=junk" "=archive" "=family" "=dev"
+mailboxes "=inbox" "=drafts" "=trash" "=sent" "=junk" "=archive" "=family" "=dev" "=work"
 
 # general config
 set send_charset="us-ascii:utf-8"
@@ -91,25 +91,33 @@ bind pager \031 previous-line		# Mouse wheel
 bind pager \005 next-line		# Mouse wheel
 bind editor <Tab> complete-query
 
-# go, move, copy
-macro index,pager gi "<change-folder>=inbox<enter>" "go to inbox"
-macro index,pager Mi ";<save-message>=inbox<enter>" "move mail to inbox"
-macro index,pager Ci ";<copy-message>=inbox<enter>" "copy mail to inbox"
-macro index,pager gd "<change-folder>=drafts<enter>" "go to drafts"
-macro index,pager Md ";<save-message>=drafts<enter>" "move mail to drafts"
-macro index,pager Cd ";<copy-message>=drafts<enter>" "copy mail to drafts"
-macro index,pager gj "<change-folder>=junk<enter>" "go to junk"
-macro index,pager Mj ";<save-message>=junk<enter>" "move mail to junk"
-macro index,pager Cj ";<copy-message>=junk<enter>" "copy mail to junk"
-macro index,pager gt "<change-folder>=trash<enter>" "go to trash"
-macro index,pager Mt ";<save-message>=trash<enter>" "move mail to trash"
-macro index,pager Ct ";<copy-message>=trash<enter>" "copy mail to trash"
-macro index,pager gs "<change-folder>=sent<enter>" "go to sent"
-macro index,pager Ms ";<save-message>=sent<enter>" "move mail to sent"
-macro index,pager Cs ";<copy-message>=sent<enter>" "copy mail to sent"
 macro index,pager ga "<change-folder>=archive<enter>" "go to archive"
 macro index,pager Ma ";<save-message>=archive<enter>" "move mail to archive"
 macro index,pager Ca ";<copy-message>=archive<enter>" "copy mail to archive"
+macro index,pager gd "<change-folder>=drafts<enter>" "go to drafts"
+macro index,pager Md ";<save-message>=drafts<enter>" "move mail to drafts"
+macro index,pager Cd ";<copy-message>=drafts<enter>" "copy mail to drafts"
+macro index,pager gc "<change-folder>=dev<enter>" "go to dev"
+macro index,pager Mc ";<save-message>=dev<enter>" "move mail to dev"
+macro index,pager Cc ";<copy-message>=dev<enter>" "copy mail to dev"
+macro index,pager gf "<change-folder>=family<enter>" "go to family"
+macro index,pager Mf ";<save-message>=family<enter>" "move mail to family"
+macro index,pager Cf ";<copy-message>=family<enter>" "copy mail to family"
+macro index,pager gi "<change-folder>=inbox<enter>" "go to inbox"
+macro index,pager Mi ";<save-message>=inbox<enter>" "move mail to inbox"
+macro index,pager Ci ";<copy-message>=inbox<enter>" "copy mail to inbox"
+macro index,pager gj "<change-folder>=junk<enter>" "go to junk"
+macro index,pager Mj ";<save-message>=junk<enter>" "move mail to junk"
+macro index,pager Cj ";<copy-message>=junk<enter>" "copy mail to junk"
+macro index,pager gs "<change-folder>=sent<enter>" "go to sent"
+macro index,pager Ms ";<save-message>=sent<enter>" "move mail to sent"
+macro index,pager Cs ";<copy-message>=sent<enter>" "copy mail to sent"
+macro index,pager gt "<change-folder>=trash<enter>" "go to trash"
+macro index,pager Mt ";<save-message>=trash<enter>" "move mail to trash"
+macro index,pager Ct ";<copy-message>=trash<enter>" "copy mail to trash"
+macro index,pager gw "<change-folder>=work<enter>" "go to work"
+macro index,pager Mw ";<save-message>=work<enter>" "move mail to work"
+macro index,pager Cw ";<copy-message>=work<enter>" "copy mail to work"
 
 # gpg
 set crypt_auto_sign = yes
