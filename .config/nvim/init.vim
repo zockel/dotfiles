@@ -7,9 +7,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
-colorscheme elflord
+colorscheme catppuccin-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
