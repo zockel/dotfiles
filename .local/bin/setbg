@@ -1,0 +1,6 @@
+#!/bin/bash
+
+bg="$XDG_DATA_HOME/bg"
+
+[[ -f "$1" ]] && ln -sf "$(readlink -f "$1")" "$bg"
+xwallpaper --zoom "$bg"
