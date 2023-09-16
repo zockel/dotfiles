@@ -2,6 +2,8 @@
 
 # simple xinit startup script
 
+setbg &         # wallpaper script
+xcompmgr &      # composite manager
 remaps & 	# run keyboard remapping script
 status &        # run statusbar script
 sxhkd &         # run hotkey daemon
