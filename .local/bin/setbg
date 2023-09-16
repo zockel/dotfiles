@@ -2,5 +2,5 @@
 
 bg="$XDG_DATA_HOME/bg"
 
-[[ -f "$1" ]] && ln -sf "$(readlink -f "$1")" "$bg" || notify-send "Could not set wallpaper"
+[[ -f "$1" ]] && ln -sf "$(readlink -f "$1")" "$bg" || xwallpaper --zoom "$bg" || notify-send "Could not set wallpaper"
 xwallpaper --zoom "$bg"
