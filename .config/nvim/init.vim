@@ -19,6 +19,9 @@ syntax on
 filetype plugin on
 highlight ColorColumn ctermbg=238
 set splitbelow splitright
+set tw=80
+set expandtab
+set shiftwidth=2
 
 " toggle color column
 nnoremap <leader>z :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<CR>
