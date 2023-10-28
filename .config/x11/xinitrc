@@ -1,10 +1,8 @@
 #!/bin/sh
 
 # simple xinit startup script
-
-setbg &         # wallpaper script
-xcompmgr &      # composite manager
 remaps & 	# run keyboard remapping script
+dunst &
 status &        # run statusbar script
 sxhkd &         # run hotkey daemon
 mpd &           # run music player daemon
