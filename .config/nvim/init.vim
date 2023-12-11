@@ -10,7 +10,7 @@ Plug 'ap/vim-css-color'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
-colorscheme elflord
+colorscheme catppuccin-mocha
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
