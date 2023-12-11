@@ -1,9 +1,11 @@
 #!/bin/sh
 
 # simple xinit startup script
-remaps & 	# run keyboard remapping script
-dunst &
-status &        # run statusbar script
-sxhkd &         # run hotkey daemon
-mpd &           # run music player daemon
+picom &         # composite manager
+setbg &         # wallpaper script
+remaps & 	# keyboard remapping script
+dunst &         # notification daemon
+slstatus &      # statusbar application
+sxhkd &         # simple x hotkey daemon
+mpd &           # music player daemon
 exec dwm 	# run dwm
