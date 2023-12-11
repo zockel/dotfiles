@@ -14,3 +14,4 @@ inode/directory=file.desktop
 audio/aac=audio.desktop
 audio/mp3=audio.desktop
 audio/flac=audio.desktop
+x-scheme-handler/webcal=google-chrome.desktop
